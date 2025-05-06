@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2025 The HedgeDoc developers (see AUTHORS file)
+ * SPDX-FileCopyrightText: 2021 The HedgeDoc developers (see AUTHORS file)
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
@@ -23,12 +23,7 @@ export class MockApiTokenGuard {
       try {
         this.user = await this.usersService.getUserByUsername('hardcoded');
       } catch (e) {
-        this.user = await this.usersService.createUser(
-          'hardcoded',
-          'Testy',
-          null,
-          null,
-        );
+        this.user = await this.usersService.createUser('hardcoded', 'Testy');
       }
     }
     req.user = this.user;
